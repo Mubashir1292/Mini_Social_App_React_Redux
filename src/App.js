@@ -1,26 +1,13 @@
-import { useState } from "react";
+import React from "react";
+import AddPostForm from "./app/features/posts/AddPostForm";
+import PostLists from "./app/features/posts/PostLists";
 
 function App() {
-  const [isDark, setIsDark] = useState(true);
-  const handleToggle = () => {
-    setIsDark((curr) => !curr);
-  };
   return (
-    <div
-      style={{
-        backgroundColor: isDark ? "gray" : "white",
-        color: isDark ? "white" : "gray",
-        height: "100vh",
-      }}
-    >
-      <button
-        onClick={handleToggle}
-        style={{ position: "absolute", top: 1, right: 1 }}
-      >
-        {isDark ? "Light" : "black"}
-      </button>
-      {/* <PostList /> */}
-    </div>
+    <React.Fragment>
+      <AddPostForm />
+      <PostLists />
+    </React.Fragment>
   );
 }
 
