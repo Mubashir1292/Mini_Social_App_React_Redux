@@ -1,5 +1,4 @@
 import { useState } from "react";
-import PostList from "./app/features/posts/PostList";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -20,7 +19,7 @@ function App() {
       >
         {isDark ? "Light" : "black"}
       </button>
-      <PostList />
+      {/* <PostList /> */}
     </div>
   );
 }
