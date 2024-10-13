@@ -4,6 +4,7 @@ const initialState = [
     id: 1,
     title: "Learning redux might be tough",
     content: "Learning Redux-Toolkit and others might be risky",
+    author: 2,
   },
   {
     id: 2,
@@ -22,12 +23,13 @@ const postSlice = createSlice({
       reducer(state, action) {
         state.push(action.payload);
       },
-      prepare(title, content) {
+      prepare(title, content, userId) {
         return {
           payload: {
             id: nanoid(),
             title,
             content,
+            author: userId,
           },
         };
       },
